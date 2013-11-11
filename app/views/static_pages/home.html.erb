@@ -1,2 +1,16 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<% provide(:title, 'Anasayfa') %>
+
+<div class="center hero-unit">
+	<h1>AMS uygulamasına hoşgeldiniz</h1>
+	<h2>
+		Bu sayfa AYS(Apartman Yönetim Sistemi) ana sayfasıdır. Uygulamayı hemen kullanmaya başlamak için üye olunuz...
+	</h2>
+	<%= link_to "Hemen Kayıt Ol!", signup_path , class: "btn btn-large btn-primary"%>
+	<h2>
+		Zaten üye misiniz ? Hemen giriş yapın !
+	</h2>
+	<%= link_to "Giriş Yap", signin_path , class: "btn btn-large btn-primary"%>
+
+</div>
+
+<%= link_to image_tag("rails.png",alt:"Rails"), 'http://rubyonrails.org/'%>
