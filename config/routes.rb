@@ -1,5 +1,6 @@
 AmsProject::Application.routes.draw do
   
+  get "users/new"
   root 'static_pages#home'
   #match '/', to: 'static_pages#home', via: 'get'
   #get "static_pages/home"
