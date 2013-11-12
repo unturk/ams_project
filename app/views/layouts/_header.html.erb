@@ -5,9 +5,31 @@
   				<nav>
   					<ul class="nav pull-right">
   						<li> <%= link_to "Anasayfa", root_path %></li>
-  						<li> <%= link_to "Yardım", help_path %></li>
   						<% if signed_in? %>
-  							<li><%= link_to "Üyeler", users_path %></li>
+  							<% if current_user.admin? %>
+		  						<li id="fat-menu" class="dropdown">
+		  								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+		  									Yönetim <b class="caret"></b>
+		  								</a>
+		  								<ul class="dropdown-menu">
+		  									<li><%= link_to "Aidat Takip", '#' %></li>
+		  									<li class="divider"></li>
+		  									<li><%= link_to "Kiracı Takip", '#' %></li>
+		  									<li class="divider"></li>
+											<li><%= link_to "Kullanıcı Takip", users_path %></li>
+		  								</ul>
+		  						</li>
+		  					<% end %>
+		  					<li id="fat-menu" class="dropdown">
+		  								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+		  									Bildirimler <b class="caret"></b>
+		  								</a>
+		  								<ul class="dropdown-menu">
+		  									<li><%= link_to "Duyurular", '#' %></li>
+		  									<li class="divider"></li>
+		  									<li><%= link_to "İstek/Şikayet", '#' %></li>
+		  								</ul>
+		  					</li>
   							<li id="fat-menu" class="dropdown">
   								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
   									Hesabım <b class="caret"></b>

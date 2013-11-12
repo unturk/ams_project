@@ -1,5 +1,5 @@
-<% provide(:title, "Sign in") %>
-<h1>Sign in</h1>
+<% provide(:title, "Giriş") %>
+<h1>Giriş Yap</h1>
 
 <div class="row">
   <div class="span6 offset3">
@@ -8,12 +8,12 @@
       <%= f.label :email %>
       <%= f.text_field :email %>
 
-      <%= f.label :password %>
+      <%= f.label :Şifre %>
       <%= f.password_field :password %>
 
-      <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+      <%= f.submit "Giriş Yap", class: "btn btn-large btn-primary" %>
     <% end %>
 
-    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+    <p>Üye değil misiniz? <%= link_to "Hemen Kayıt Ol!", signup_path %></p>
   </div>
 </div>

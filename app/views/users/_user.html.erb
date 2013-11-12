@@ -2,7 +2,7 @@
   <%= gravatar_for user, size: 52 %>
   <%= link_to user.name, user %>
   <% if current_user.admin? && !current_user?(user) %>
-    | <%= link_to "delete", user, method: :delete,
-                                  data: { confirm: "Are you sure?" } %>
+    | <%= link_to "Kullanıcıyı Sil", user, method: :delete,
+                                  data: { confirm: "Silmek istediğinize emin misiniz?\nBu işlemin geri dönüşü yoktur!" } %>
   <% end %>
 </li>

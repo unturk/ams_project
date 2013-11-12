@@ -20,4 +20,16 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+      attributes:
+        user:
+          name:     "İsim"
+          email:    "E-Mail"
+          password: "Şifre"
+          password_confirmation: "Şifre Doğrulama"
+      errors:
+        models:
+          user:
+            attributes:
+              password:
+                blank: "alanını boş bırakamazsınız."
