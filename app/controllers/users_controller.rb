@@ -34,8 +34,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       sign_in @user
-      flash[:success] = "Welcome to the Blog App!" 
-      redirect_to @user
+      flash[:success] = "Kayıt başarılı, AYS uygulamasına hoşgeldiniz!" 
+      #redirect_to @user
+      redirect_to root_url
     else
       render 'new'
     end
