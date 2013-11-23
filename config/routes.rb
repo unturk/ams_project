@@ -1,12 +1,13 @@
 AmsProject::Application.routes.draw do
   
-  get "renters/new"
   resources :sessions, only: [:new, :create, :destroy]
   match 'signin', to: 'sessions#new', via:'get'
   match 'signout', to: 'sessions#destroy', via:'delete'
   
   resources :users
   match '/signup', to: 'users#new', via:'get'
+  
+  resources :renters
   
   #get "static_pages/home"
   #match '/', to: 'static_pages#home', via: 'get'

@@ -1,0 +1,32 @@
+<% provide(:title, 'Kiracı Takip') %>
+<h1>Tüm Apartman Sakinleri</h1>
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>D. No</th>
+			<th>İsim</th>
+			<th>Telefon</th>
+			<th>E-mail</th>
+			<th>Eylemler</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @renters.each do |renter| %>
+			<tr>
+				<td><%= renter.ap_num %></td>
+				<td><%= renter.name %></td>
+				<td><%= renter.phone %></td>
+				<td><%= renter.email %></td>
+				<% if current_user.admin? %>
+					<td><%= link_to 'Düzenle' ,edit_renter_path(renter) %>
+					| <%= link_to "Sil", renter, method: :delete,
+                                  data: { confirm: "Bu kiracıyı silmek istediğinize emin misiniz?\nBu işlemin geri dönüşü yoktur!" } %>
+					</td>
+				<% end %>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<a href="renters/new" class="btn btn-primary btn-sm active add_renter" role="button">Yeni Kiracı Ekle</a>

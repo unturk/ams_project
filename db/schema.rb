@@ -11,7 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131112182837) do
+ActiveRecord::Schema.define(version: 20131123112632) do
+
+  create_table "renters", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "ap_num"
+    t.string   "ocak"
+    t.string   "subat"
+    t.string   "mart"
+    t.string   "nisan"
+    t.string   "mayis"
+    t.string   "haziran"
+    t.string   "temmuz"
+    t.string   "agustos"
+    t.string   "eylul"
+    t.string   "ekim"
+    t.string   "kasim"
+    t.string   "aralik"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "renters", ["ap_num"], name: "index_renters_on_ap_num", unique: true
 
   create_table "users", force: true do |t|
     t.string   "name"

@@ -1,2 +1,25 @@
-<h1>Renters#new</h1>
-<p>Find me in app/views/renters/new.html.erb</p>
+<% provide(:title, 'Kiracı Takip') %>
+<h1>Yeni Kiracı</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@renter) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+
+	  <%= f.label :ap_num%>
+	  <%= f.select :ap_num , ['1','2','3','4','5','6','7','8','9','10'] %>
+	  
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      
+      <%= f.label :phone %>
+      <%= f.text_field :phone %>
+
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+
+
+      <%= f.submit "Kiracıyı Ekle", class: "btn btn-large btn-primary submit_btn_loc" %>
+    <% end %>
+  </div>
+</div>

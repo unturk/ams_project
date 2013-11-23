@@ -27,6 +27,11 @@ en:
           email:    "E-Mail"
           password: "Şifre"
           password_confirmation: "Şifre Doğrulama"
+        renter:
+          name:     "İsim"
+          ap_num:   "Daire Numarası"
+          email:    "E-Mail"
+          phone:    "Telefon"
       errors:
         models:
           user:
