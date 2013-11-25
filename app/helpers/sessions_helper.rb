@@ -1,5 +1,20 @@
 module SessionsHelper
   
+  def correct_user
+    @user = User.find(params[:id])
+    if (!current_user?(@user))
+      redirect_to(root_url)
+      flash[:notice] = "Sadece kendi hesabınız için ulaşabilirsiniz!"
+    end
+  end
+    
+  def admin_user
+    if(!current_user.admin?)
+      redirect_to root_url
+      flash[:notice] = "Sayfaya erişim yetkiniz yok!"
+    end
+  end
+  
   def sign_in(user)
     remember_token = User.new_remember_token
     cookies.permanent[:remember_token] = remember_token

@@ -1,6 +1,10 @@
 class SessionsController < ApplicationController
   
   def new
+    if signed_in?
+      redirect_to root_url
+      flash[:notice] = "Zaten sisteme giriş yapmış durumdasınız."
+    end
   end
   
   def create
@@ -9,8 +13,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
      sign_in user
      #redirect_back_or user
-     #redirect_back_or root_url
-     redirect_to root_url
+     redirect_back_or root_url
      flash[:success] = "Giriş başarılı!" 
     else
       flash.now[:error] = 'Hatalı email/şifre kombinasyonu, tekrar deneyiniz!'

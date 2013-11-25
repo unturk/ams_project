@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   
-  before_action :signed_in_user, only: [:index, :edit, :update, :destroy, :following, :followers]
-  before_action :correct_user,   only: [:edit, :update]
-  before_action :admin_user,     only: :destroy
+  before_action :signed_in_user, only: [:index, :edit, :update, :destroy, :show]
+  before_action :correct_user,   only: [:edit, :update , :show]
+  before_action :admin_user,     only: [:index, :destroy ]
   
   def new
     @user = User.new
@@ -14,7 +14,6 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
-    #@microposts = @user.microposts.paginate(page: params[:page])
   end
   
   def edit
@@ -54,13 +53,4 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
     
-    def correct_user
-      @user = User.find(params[:id])
-      redirect_to(root_url) unless current_user?(@user)
-    end
-    
-    def admin_user
-      redirect_to root_url unless current_user.admin?
-    end
-  
 end

@@ -1,6 +1,6 @@
 class RentersController < ApplicationController
   
-  #before_action :signed_in_user, only: :index
+  before_action :signed_in_user, only: [:index, :new, :create, :edit, :destroy, :update]
   before_action :admin_user, only: [:index, :new, :create, :edit, :destroy, :update]
   
   def new
@@ -51,7 +51,4 @@ class RentersController < ApplicationController
       params.require(:renter).permit(:ap_num, :name, :email, :phone)
     end
     
-    def admin_user
-      redirect_to root_url unless current_user.admin?
-    end
 end
