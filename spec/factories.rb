@@ -10,6 +10,25 @@ FactoryGirl.define do
     end
   end
   
+  factory :renter do
+    ap_num "1"
+    name "Example Renter"
+    phone "02329876543"
+    email "example@renter.com"
+    ocak "0"
+    subat "0"
+    mart "0"
+    nisan "0"
+    mayis "0"
+    haziran "0"
+    temmuz "0"
+    agustos "0"
+    eylul "0"
+    ekim "0"
+    kasim "0"
+    aralik "0"
+  end
+  
 end
 
 #FactoryGirl.define do

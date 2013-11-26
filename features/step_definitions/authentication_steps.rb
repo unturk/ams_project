@@ -3,7 +3,7 @@ Given /^a user visits the signin page$/ do
 end
 
 When /^she submits invalid signin information$/ do
-  click_button "Sign in"
+  click_button "Giriş Yap"
 end
 
 Then /^she should see an error message$/ do
@@ -17,14 +17,15 @@ end
 
 When /^the user submits valid signin information$/ do
   fill_in "Email",    with: @user.email
-  fill_in "Password", with: @user.password
-  click_button "Sign in"
+  fill_in "Şifre", with: @user.password
+  click_button "Giriş Yap"
 end
 
 Then /^she should see her profile page$/ do
-  expect(page).to have_title(@user.name)
+  #expect(page).to have_title(@user.name)
+  expect(page).to have_title('Anasayfa')
 end
 
 Then /^she should see a signout link$/ do
-  expect(page).to have_link('Sign out', href: signout_path)
+  expect(page).to have_link('Çıkış Yap', href: signout_path)
 end
