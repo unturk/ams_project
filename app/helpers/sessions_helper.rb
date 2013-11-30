@@ -1,5 +1,9 @@
 module SessionsHelper
   
+  def verified?(user)
+    return user.verified?
+  end
+  
   def correct_user
     @user = User.find(params[:id])
     if (!current_user?(@user))

@@ -9,12 +9,17 @@ class SessionsController < ApplicationController
   
   def create
     user = User.find_by(email: params[:session][:email].downcase)
-    
+
     if user && user.authenticate(params[:session][:password])
-     sign_in user
-     #redirect_back_or user
-     redirect_back_or root_url
-     flash[:success] = "Giriş başarılı!" 
+          if verified?(user)
+            sign_in user
+            #redirect_back_or user
+            redirect_back_or root_url
+            flash[:success] = "Giriş başarılı!"
+          else
+            flash.now[:error] = 'Hesabınız yönetici tarafından onaylanmamış, sisteme giriş yapamazsınız!'
+            render 'new'
+          end
     else
       flash.now[:error] = 'Hatalı email/şifre kombinasyonu, tekrar deneyiniz!'
       render 'new'

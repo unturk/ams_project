@@ -131,9 +131,9 @@ describe "User pages" do
 
         let(:user) { User.find_by_email('user@example.com') }
 
-        it { should have_title(full_title('Anasayfa')) }
+        it { should have_title(full_title('Giriş')) }
         it { should have_selector('div.alert.alert-success', text: 'Kayıt başarılı, AYS uygulamasına hoşgeldiniz!') }
-        it { should have_link('Çıkış Yap') }
+        #it { should have_link('Çıkış Yap') }
       end
     end
   end

@@ -18,6 +18,7 @@
   						<% end %> </p>
   		<!--<p>Daire No:</p>!-->
     </section>
+    <section><%= render 'verify_form' if current_user.admin? %></section>
   </aside>
   <div class="span8">
   	<h2>Aidat Bilgileri</h2>

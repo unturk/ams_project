@@ -6,6 +6,8 @@ AmsProject::Application.routes.draw do
   
   resources :users
   match '/signup', to: 'users#new', via:'get'
+  match 'users/:id/verify' => "users#verify", via:'get' ,:as => "verify_user"
+  match 'users/:id/unverify' => "users#unverify", via:'get' ,:as => "unverify_user"
   
   resources :renters
   
