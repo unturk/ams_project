@@ -7,10 +7,24 @@
         <%= @user.name %>
       </h1>
     </section>
+    <section>
+    	<h1>Kullanıcı Bilgileri:</h1>
+  		<p>Ad: <%= @user.name %></p>
+  		<p>E-Mail: <%= @user.email %></p>
+  		<p>Yetki Durumu: <% if @user.admin? %>
+  							Yönetici
+  						 <% else %>
+  							Kiracı
+  						<% end %> </p>
+  		<!--<p>Daire No:</p>!-->
+    </section>
   </aside>
   <div class="span8">
-  	<h3>Kullanıcı Bilgileri:</h3>
-  	<h3>Ad: <%= @user.name %></h3>
-  	<h3>E-Mail: <%= @user.email %></h3>
+  	<h2>Aidat Bilgileri</h2>
+  	<% if current_user.id == @user.id || current_user.admin? %>
+  		<!--Tablo gelicek!-->
+  	<% else %>
+  		<h2>Diğer kiracıların aidat bilgilerine bakmak için yetkiniz yok!</h2>
+  	<% end %>
   </div>
 </div>
