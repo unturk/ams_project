@@ -12,3 +12,4 @@ When the admin submits valid signin information
 Then he should see the home page
 And he should see a signout link
 And he also should see the kiracı takip link
+And he also should see the kullanıcı takip link
