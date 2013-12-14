@@ -6,14 +6,14 @@ class RentersController < ApplicationController
   def new
     @renter = Renter.new
   end
-  
+
+
   def index
     @renters = Renter.all.order('ap_num ASC')
   end
   
   def show
-    #Not allowed, redirect to all renters
-    redirect_to renters_path
+    @renter = Renter.find(params[:id])
   end
   
   def create
@@ -41,14 +41,16 @@ class RentersController < ApplicationController
   end
   
   def destroy
-    Renter.find(params[:id]).destroy
+    @kiraci = Renter.find(params[:id])
+    Aidat.destroy_all(:daire => ( @kiraci.ap_num ) )
+    @kiraci.destroy
     flash[:success] = "Kiracı başarıyla silindi."
     redirect_to renters_path
   end
   
   private
     def renter_params
-      params.require(:renter).permit(:ap_num, :name, :email, :phone)
+      params.require(:renter).permit(:ap_num, :name, :email, :phone, :meslek, :medeni_durum, :birey_sayisi, :cocuk_sayisi, :memleket, :ev_sahibi, :ev_sahibi_telefon, :kira_miktari)
     end
     
 end

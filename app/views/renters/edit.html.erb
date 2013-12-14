@@ -6,8 +6,10 @@
     <%= form_for(@renter) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
+        <h5>* işaretli alanlar zorunludur</h5>
+
 	  <%= f.label :ap_num%>
-	  <%= f.select :ap_num , ['1','2','3','4','5','6','7','8','9','10'] %>
+	  <%= f.select :ap_num , 1..40 %>
 	  
       <%= f.label :name %>
       <%= f.text_field :name %>
@@ -17,6 +19,30 @@
 
       <%= f.label :email %>
       <%= f.text_field :email %>
+
+        <%= f.label :meslek %>
+        <%= f.text_field :meslek %>
+
+        <%= f.label :medeni_durum %>
+        <%= f.text_field :medeni_durum %>
+
+        <%= f.label :birey_sayisi %>
+        <%= f.text_field :birey_sayisi %>
+
+        <%= f.label :cocuk_sayisi %>
+        <%= f.text_field :cocuk_sayisi %>
+
+        <%= f.label :memleket %>
+        <%= f.text_field :memleket %>
+
+        <%= f.label :ev_sahibi %>
+        <%= f.text_field :ev_sahibi %>
+
+        <%= f.label :ev_sahibi_telefon %>
+        <%= f.text_field :ev_sahibi_telefon %>
+
+        <%= f.label :kira_miktari %>
+        <%= f.text_field :kira_miktari %>
 
 
       <%= f.submit "Kiracıyı Güncelle", class: "btn btn-large btn-primary submit_btn_loc" %>

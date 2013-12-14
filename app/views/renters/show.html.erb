@@ -1,0 +1,87 @@
+<% provide(:title, @renter.name) %>
+
+    <%= link_to "Kiracı Sayfası'na Git", renters_path %>
+
+
+<h1> Kiracı Bilgileri</h1>
+
+<table  class="table table-striped">
+
+  <tr>
+    <th>Daire No :</th>
+    <th><%= @renter.ap_num %></th>
+   </tr>
+
+  <tr>
+    <th>Kiracı :</th>
+    <th><%= @renter.name %></th>
+  </tr>
+
+  <tr>
+    <th>E-Mail :</th>
+    <th><%= @renter.email %></th>
+  </tr>
+
+  <tr>
+    <th>Telefon Numarası :</th>
+    <th><%= @renter.phone %></th>
+  </tr>
+
+  <%  if !(@renter.meslek.blank?) %>
+  <tr>
+    <th>Meslek :</th>
+    <th><%= @renter.meslek %></th>
+  </tr>
+  <% end %>
+
+  <%  if !(@renter.medeni_durum.blank?) %>
+      <tr>
+        <th>Medeni Durum :</th>
+        <th><%= @renter.medeni_durum %></th>
+      </tr>
+  <% end %>
+
+  <%  if !(@renter.birey_sayisi.nil?) %>
+      <tr>
+        <th>Birey Sayısı :</th>
+        <th><%= @renter.birey_sayisi %></th>
+      </tr>
+  <% end %>
+
+  <%  if !(@renter.cocuk_sayisi.nil?) %>
+      <tr>
+        <th>Çocuk Sayısı :</th>
+        <th><%= @renter.cocuk_sayisi %></th>
+      </tr>
+  <% end %>
+
+  <%  if !(@renter.memleket.blank?) %>
+      <tr>
+        <th>Memleket :</th>
+        <th><%= @renter.memleket %></th>
+      </tr>
+  <% end %>
+
+  <%  if !(@renter.ev_sahibi.blank?) %>
+      <tr>
+        <th>Ev Sahibi :</th>
+        <th><%= @renter.ev_sahibi %></th>
+      </tr>
+  <% end %>
+
+  <%  if !(@renter.ev_sahibi_telefon.blank?) %>
+      <tr>
+        <th>Ev Sahibi Telefon :</th>
+        <th><%= @renter.ev_sahibi_telefon %></th>
+      </tr>
+  <% end %>
+
+  <%  if !(@renter.kira_miktari.blank?) %>
+      <tr>
+        <th>Kira Miktarı :</th>
+        <th><%= @renter.kira_miktari %> TL </th>
+      </tr>
+  <% end %>
+
+
+    </table>

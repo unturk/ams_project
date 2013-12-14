@@ -5,18 +5,15 @@ class CreateRenters < ActiveRecord::Migration
       t.string :email
       t.string :phone
       t.string :ap_num
-      t.string :ocak
-      t.string :subat
-      t.string :mart
-      t.string :nisan
-      t.string :mayis
-      t.string :haziran
-      t.string :temmuz
-      t.string :agustos
-      t.string :eylul
-      t.string :ekim
-      t.string :kasim
-      t.string :aralik
+      t.string :meslek
+      t.string :medeni_durum
+      t.integer :birey_sayisi
+      t.integer :cocuk_sayisi
+      t.string :memleket
+      t.string :ev_sahibi
+      t.string :ev_sahibi_telefon
+      t.string :kira_miktari
+
 
       t.timestamps
     end

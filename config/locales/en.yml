@@ -28,10 +28,19 @@ en:
           password: "Şifre"
           password_confirmation: "Şifre Doğrulama"
         renter:
-          name:     "İsim"
-          ap_num:   "Daire Numarası"
-          email:    "E-Mail"
-          phone:    "Telefon"
+          name:     "İsim  *"
+          ap_num:   "Daire Numarası  *"
+          email:    "E-Mail  *"
+          phone:    "Telefon  *"
+          meslek:   "Meslek"
+          medeni_durum:  "Medeni Durum"
+          birey_sayisi: "Birey Sayısı"
+          cocuk_sayisi: "Çocuk Sayısı"
+          memleket: "Memleket"
+          ev_sahibi: "Ev Sahibi"
+          ev_sahibi_telefon: "Ev Sahibi Telefon"
+          kira_miktari: "Kira Miktarı (TL)"
+
       errors:
         models:
           user:

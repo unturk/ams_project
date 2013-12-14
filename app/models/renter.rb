@@ -14,17 +14,5 @@ class Renter < ActiveRecord::Base
   private
     def set_defaults
       self.email = email.downcase
-      self.ocak = "0"
-      self.subat = "0"
-      self.mart = "0"
-      self.nisan = "0"
-      self.mayis = "0"
-      self.haziran = "0"
-      self.temmuz = "0"
-      self.agustos = "0"
-      self.eylul = "0"
-      self.ekim = "0"
-      self.kasim = "0"
-      self.aralik = "0"
     end
 end

@@ -7,19 +7,29 @@
   						<li> <%= link_to "Anasayfa", root_path %></li>
   						<% if signed_in? %>
   							<% if current_user.admin? %>
-		  						<li id="fat-menu" class="dropdown">
+
+
+								<li id="fat-menu" class="dropdown">
 		  								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 		  									Yönetim <b class="caret"></b>
 		  								</a>
 		  								<ul class="dropdown-menu">
-		  									<li><%= link_to "Aidat Takip", '#' %></li>
-		  									<li class="divider"></li>
+                                          <li><%= link_to "Aidat Takip", aidats_path %></li>
+                                          <li class="divider"></li>
 		  									<li><%= link_to "Kiracı Takip", renters_path %></li>
-		  									<li class="divider"></li>
+		  							  		<li class="divider"></li>
 											<li><%= link_to "Kullanıcı Takip", users_path %></li>
 		  								</ul>
 		  						</li>
 		  					<% end %>
+
+
+                          <% unless current_user.admin? %>
+                            <li><%= link_to "Aidat Takip", aidat_path(kiraci_user) %></li>
+                          <% end %>
+
+
+
 		  					<li id="fat-menu" class="dropdown">
 		  								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 		  									Bildirimler <b class="caret"></b>

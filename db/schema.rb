@@ -11,25 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131130151053) do
+ActiveRecord::Schema.define(version: 20131213112722) do
+
+  create_table "aidats", force: true do |t|
+    t.integer  "daire"
+    t.integer  "year"
+    t.string   "month"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "renters", force: true do |t|
     t.string   "name"
     t.string   "email"
     t.string   "phone"
     t.string   "ap_num"
-    t.string   "ocak"
-    t.string   "subat"
-    t.string   "mart"
-    t.string   "nisan"
-    t.string   "mayis"
-    t.string   "haziran"
-    t.string   "temmuz"
-    t.string   "agustos"
-    t.string   "eylul"
-    t.string   "ekim"
-    t.string   "kasim"
-    t.string   "aralik"
+    t.string   "meslek"
+    t.string   "medeni_durum"
+    t.integer  "birey_sayisi"
+    t.integer  "cocuk_sayisi"
+    t.string   "memleket"
+    t.string   "ev_sahibi"
+    t.string   "ev_sahibi_telefon"
+    t.string   "kira_miktari"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

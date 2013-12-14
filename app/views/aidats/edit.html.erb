@@ -1,0 +1,28 @@
+<% provide(:title, 'Aidat Düzenle') %>
+
+<%= link_to "Aidat Sayfası'na Git", aidats_path %>
+    <h1>Aidat Düzenle</h1>
+    <div class="row">
+      <div class="span6 offset3">
+        <%= form_for(:aidatedit, url: aidat_path(@aidatedit), html:{ method: "patch"} )  do |f| %>
+
+             <h2><%= @aidatedit.daire%> numaralı daire</h2>
+
+
+            <%= f.label :Yıl %><br>
+            <%= f.select :year , [2013,2014,2015,2016,2017,2018,2019,2020,2021,2022] %>
+
+
+
+            <%= f.label :Ay %><br>
+            <%= f.select :month , ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım', 'Aralık'] %>
+
+
+            <p>
+              <%= f.submit "Aidat Düzenle", class:"btn btn-large btn-primary submit_btn_loc" %>
+            </p>
+
+        <% end %>
+
+      </div>
+    </div>

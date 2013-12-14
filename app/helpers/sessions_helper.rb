@@ -8,14 +8,14 @@ module SessionsHelper
     @user = User.find(params[:id])
     if (!current_user?(@user))
       redirect_to(root_url)
-      flash[:notice] = "Sadece kendi hesabınız için ulaşabilirsiniz!"
+      flash[:notice] = "Sadece kendi hesabiniz icin ulasabilirsiniz!"
     end
   end
     
   def admin_user
     if(!current_user.admin?)
       redirect_to root_url
-      flash[:notice] = "Sayfaya erişim yetkiniz yok!"
+      flash[:notice] = "Sayfaya erisim yetkiniz yok!"
     end
   end
   
@@ -38,6 +38,16 @@ module SessionsHelper
   def current_user
     remember_token = User.encrypt(cookies[:remember_token])
     @current_user ||= User.find_by(remember_token: remember_token)
+  end
+
+  def kiraci_user
+    if Renter.all.blank?
+      flash[:notice] = "Kiracı kayıtlı değil.!"
+    else
+      @insan = User.find(current_user)
+      @daire = Renter.find_by_email(@insan.email )
+      return @daire.ap_num
+    end
   end
   
   def current_user?(user)

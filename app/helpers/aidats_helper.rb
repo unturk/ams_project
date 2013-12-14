@@ -1,0 +1,2 @@
+module AidatsHelper
+end

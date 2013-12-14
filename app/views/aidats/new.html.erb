@@ -1,0 +1,34 @@
+<% provide(:title, 'Yeni Aidat Girdisi') %>
+
+<% if current_user.admin? %>
+    <%= link_to "Aidat Sayfası'na Git", aidats_path %>
+<% end %>
+
+    <h1>Aidat Ekle</h1>
+    <div class="row">
+      <div class="span6 offset3">
+
+        <%= form_for :aidatform, url:aidats_path do |f| %>
+
+            <%= f.label :Daire%>
+            <%= f.select :daire , 1..40 %>
+
+            <!--<%= f.hidden_field :daire, :value => params[:id] %>!-->
+
+            <%= f.label :Yıl %><br>
+            <%= f.select :year , [2013,2014,2015,2016,2017,2018,2019,2020,2021,2022] %>
+
+
+
+            <%= f.label :Ay %><br>
+            <%= f.select :month , ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım', 'Aralık'] %>
+
+
+            <p>
+              <%= f.submit :Ekle , class: "btn btn-large btn-primary submit_btn_loc" %>
+            </p>
+
+        <% end %>
+
+    </div>
+        </div>

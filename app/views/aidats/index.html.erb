@@ -1,0 +1,23 @@
+<% provide(:title, 'Aidat İşlem') %>
+<h1>Aidat Sayfası</h1>
+
+<%= link_to "Aidat Ekle", new_aidat_path , class:'btn btn-primary btn-sm active add_renter', role:'button' %>
+
+<br></br><table  class="table table-striped">
+  <thead>
+    <tr>
+      <th>Daire No</th>
+      <th>İsim</th>
+    </tr>
+  </thead>
+  <tbody>
+      <% @renters.each do |renter| %>
+          <tr>
+            <td><%= renter.ap_num %></td>
+            <td><%= renter.name %></td>
+            <td><%=  link_to 'Aidat Görüntüle', aidat_path(renter.ap_num) %> </td>
+
+          </tr>
+      <% end %>
+  </tbody>
+</table>

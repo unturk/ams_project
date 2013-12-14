@@ -4,7 +4,7 @@
 <table class="table table-striped">
 	<thead>
 		<tr>
-			<th>D. No</th>
+			<th>Daire No</th>
 			<th>İsim</th>
 			<th>Telefon</th>
 			<th>E-mail</th>
@@ -19,7 +19,9 @@
 				<td><%= renter.phone %></td>
 				<td><%= renter.email %></td>
 				<% if current_user.admin? %>
-					<td><%= link_to 'Düzenle' ,edit_renter_path(renter) %>
+					<td>
+                      <%= link_to 'Göster' ,renter_path(renter) %>
+                    |  <%= link_to 'Düzenle' ,edit_renter_path(renter) %>
 					| <%= link_to "Sil", renter, method: :delete,
                                   data: { confirm: "Bu kiracıyı silmek istediğinize emin misiniz?\nBu işlemin geri dönüşü yoktur!" } %>
 					</td>

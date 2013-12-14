@@ -1,0 +1,42 @@
+<% provide(:title, 'Aidat Geçmişi') %>
+
+<% if  @current_user.admin? %>
+    <%= link_to "Aidat Sayfası'na Git", aidats_path %>
+<% end %>
+
+    <h1> Aidat Geçmişi</h1>
+    <h2><%= @kiraciaidat.daire%> numaralı daire</h2>
+    <h2><%= @kiraci.name%> </h2>
+
+    <table  class="table table-striped">
+      <thead>
+      <tr>
+        <th>Daire No</th>
+        <th>Yıl</th>
+        <th>Ay</th>
+        <th>Eklenme Tarihi</th>
+        <th>Güncellenen Tarih</th>
+      </tr>
+
+      </thead>
+      <tbody>
+      <% @gecmis.each do |para| %>
+
+          <tr>
+            <td><%= para.daire %></td>
+            <td><%= para.year %></td>
+            <td><%= para.month %></td>
+            <td><%= para.created_at %></td>
+            <td><%= para.updated_at %></td>
+
+            <% if current_user.admin? %>
+
+                <td><%=  link_to 'Aidatı Sil', aidat_path(para.id), method: :delete, data: {confirm: 'Aidatı silmek üzeresiniz. Son kararınız mı?'} %> </td>
+                <td><%=  link_to 'Aidatı Düzelt', edit_aidat_path(para.id) %> </td>
+            <% end %>
+
+          </tr>
+      <% end %>
+
+      </tbody>
+    </table>
