@@ -46,7 +46,7 @@ module SessionsHelper
     else
       @insan = User.find(current_user)
       @daire = Renter.find_by_email(@insan.email )
-      return @daire.ap_num
+      return @daire.ap_num unless @daire == nil
     end
   end
   

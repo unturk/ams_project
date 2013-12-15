@@ -6,7 +6,7 @@ class AidatsController < ApplicationController
 
   def index
     if Renter.all.blank?
-      flash.now[:error] = "Kayıtlı Kiracı Yok. Lütfen Ekleyin."
+      flash[:error] = "Kayıtlı Kiracı Yok. Lütfen Ekleyin."
       redirect_to renters_path
     else
       @renters = Renter.all.order('ap_num ASC')
@@ -21,7 +21,7 @@ class AidatsController < ApplicationController
         flash.now[:error] = params[:id] + " nolu Kiracıya ait ödenmiş aidat yok. Lütfen ekleyin."
         render 'new'
       else
-        flash.now[:error] = params[:id] + " nolu Kiracıya ait ödenmiş aidat yok."
+        flash[:error] = params[:id] + " daire numaralı kiracıya ait ödenmiş aidat yok."
         redirect_to root_path
       end
     else

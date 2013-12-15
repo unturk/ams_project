@@ -23,12 +23,10 @@
 		  						</li>
 		  					<% end %>
 
-
-                          <% unless current_user.admin? %>
+                          
+                          <% if (!current_user.admin? && Renter.find_by_email(current_user.email))%>
                             <li><%= link_to "Aidat Takip", aidat_path(kiraci_user) %></li>
                           <% end %>
-
-
 
 		  					<li id="fat-menu" class="dropdown">
 		  								<a href="#" class="dropdown-toggle" data-toggle="dropdown">

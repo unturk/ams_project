@@ -1,3 +1,4 @@
+#Sessions controller for logging in to website
 class SessionsController < ApplicationController
   
   def new
@@ -13,17 +14,13 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
           if verified?(user)
             sign_in user
-            #redirect_back_or user
             redirect_back_or root_url
             flash[:success] = "Giriş başarılı!"
-          else
-            flash.now[:error] = 'Hesabınız yönetici tarafından onaylanmamış, sisteme giriş yapamazsınız!'
-            render 'new'
+            return
           end
-    else
-      flash.now[:error] = 'Hatalı email/şifre kombinasyonu, tekrar deneyiniz!'
-      render 'new'
     end
+    flash.now[:error] = 'Hesabınız yönetici tarafından onaylanmamış veya hatalı email/şifre kombinasyonu girdiniz!'
+    render 'new'
   end
   
   def destroy
