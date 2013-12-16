@@ -65,9 +65,9 @@ class AidatsController < ApplicationController
 #Controller method for creating subscriptions
   def create
     @aidat = Aidat.new(aidat_params)
-    daire_num = @aidat.daire
+    daire_num = @aidat.daire.to_i
 
-    if !(Renter.find_by_ap_num( daire_num ))#saved from nil check - .nil?
+    if !(Renter.find_by(ap_num: daire_num ))#saved from nil check - .nil?
       flash.now[:error] = "Böyle bir kiracı yok. Daire Numarası hatalı."
     else
       if @aidat.save
