@@ -4,8 +4,9 @@ describe Renter do
 
   before do
     @renter = Renter.new(name: "Example User", email: "user@example.com", phone:"02324567890", ap_num:"1",
-                     ocak:"0", subat:"0", mart:"0", nisan:"0", mayis:"0", haziran:"0", temmuz:"0",
-                     agustos:"0", eylul:"0", ekim:"0", kasim:"0", aralik:"0" )
+                     meslek:"Futbolcu", medeni_durum:"Bekar", birey_sayisi:"1", cocuk_sayisi:"0", 
+                     memleket:"İzmir", ev_sahibi:"Example User", ev_sahibi_telefon:"02324567890",
+                     kira_miktari:"0")
   end
 
   subject { @renter }
@@ -14,18 +15,14 @@ describe Renter do
   it { should respond_to(:email) }
   it { should respond_to(:phone) }
   it { should respond_to(:ap_num) }
-  it { should respond_to(:ocak) }
-  it { should respond_to(:subat) }
-  it { should respond_to(:mart) }
-  it { should respond_to(:nisan) }
-  it { should respond_to(:mayis) }
-  it { should respond_to(:haziran) }
-  it { should respond_to(:temmuz) }
-  it { should respond_to(:agustos) }
-  it { should respond_to(:eylul) }
-  it { should respond_to(:ekim) }
-  it { should respond_to(:kasim) }
-  it { should respond_to(:aralik) }
+  it { should respond_to(:meslek) }
+  it { should respond_to(:medeni_durum) }
+  it { should respond_to(:birey_sayisi) }
+  it { should respond_to(:cocuk_sayisi) }
+  it { should respond_to(:memleket) }
+  it { should respond_to(:ev_sahibi) }
+  it { should respond_to(:ev_sahibi_telefon) }
+  it { should respond_to(:kira_miktari) }
 
   it { should be_valid }
 

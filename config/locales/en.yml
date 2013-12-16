@@ -40,6 +40,10 @@ en:
           ev_sahibi: "Ev Sahibi"
           ev_sahibi_telefon: "Ev Sahibi Telefon"
           kira_miktari: "Kira Miktarı (TL)"
+        aidat:
+          daire: "Daire"
+          year: "Yıl"
+          month: "Ay"
 
       errors:
         models:

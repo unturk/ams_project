@@ -16,18 +16,20 @@ FactoryGirl.define do
     name "Example Renter"
     phone "02329876543"
     email "example@renter.com"
-    ocak "0"
-    subat "0"
-    mart "0"
-    nisan "0"
-    mayis "0"
-    haziran "0"
-    temmuz "0"
-    agustos "0"
-    eylul "0"
-    ekim "0"
-    kasim "0"
-    aralik "0"
+    meslek "Şarkıcı"
+    medeni_durum "Evli"
+    birey_sayisi "2"
+    cocuk_sayisi "0"
+    memleket "İzmir"
+    ev_sahibi "Uğur Üntürk"
+    ev_sahibi_telefon "12345678912"
+    kira_miktari "2000"
+  end
+  
+  factory :aidat do
+    daire "1"
+    year "2013"
+    month "Aralık"
   end
   
 end

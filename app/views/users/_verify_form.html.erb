@@ -1,7 +1,7 @@
 <% unless current_user?(@user) %>
   	<% if @user.verified? %>
-    	<%= link_to 'Onayı Sil', unverify_user_path(@user) ,class:'btn btn-danger btn-sm active', role:'button' %> 
+    	<%= link_to 'Onayı Sil', unverify_user_path(@user) ,class:'btn btn-danger btn-sm active', role:'button' %>
   	<% else %>
-    	<%= link_to 'Kullanıcıyı Onayla', verify_user_path(@user) ,class:'btn btn-primary btn-sm active', role:'button' %> 
+    	<%= link_to 'Kullanıcıyı Onayla', verify_user_path(@user) ,class:'btn btn-primary btn-sm active', role:'button' %>
   	<% end %>
 <% end %>

@@ -23,7 +23,7 @@
 		  						</li>
 		  					<% end %>
 
-                          
+
                           <% if (!current_user.admin? && Renter.find_by_email(current_user.email))%>
                             <li><%= link_to "Aidat Takip", aidat_path(kiraci_user) %></li>
                           <% end %>

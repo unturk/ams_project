@@ -1,3 +1,4 @@
+#Creating subscription table
 class CreateAidats < ActiveRecord::Migration
   def change
     create_table :aidats do |t|

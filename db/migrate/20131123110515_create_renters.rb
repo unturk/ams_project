@@ -1,3 +1,4 @@
+#Creating renters table
 class CreateRenters < ActiveRecord::Migration
   def change
     create_table :renters do |t|

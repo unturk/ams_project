@@ -1,3 +1,4 @@
+#Table creating name and email columns for user model
 class CreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|

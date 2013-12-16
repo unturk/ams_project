@@ -1,5 +1,6 @@
+# General ApplicationHelper module for application
 module ApplicationHelper
-  
+
    #returns the full title on per-page basis
   def full_title(page_title)
     base_title = "AYS"

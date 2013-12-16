@@ -8,27 +8,22 @@
     <div class="row">
       <div class="span6 offset3">
 
-        <%= form_for :aidatform, url:aidats_path do |f| %>
-
-            <%= f.label :Daire%>
+        <!--<%= form_for :aidatform, url:aidats_path do |f| %>!-->
+		<%= form_for(@aidat) do |f| %>
+            <%= f.label :daire %>
             <%= f.select :daire , 1..40 %>
 
-            <!--<%= f.hidden_field :daire, :value => params[:id] %>!-->
-
-            <%= f.label :Yıl %><br>
+            <%= f.label :year %><br>
             <%= f.select :year , [2013,2014,2015,2016,2017,2018,2019,2020,2021,2022] %>
 
-
-
-            <%= f.label :Ay %><br>
+            <%= f.label :month %><br>
             <%= f.select :month , ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım', 'Aralık'] %>
 
-
             <p>
-              <%= f.submit :Ekle , class: "btn btn-large btn-primary aidat_btn_loc" %>
+              <%= f.submit "Ekle", class: "btn btn-large btn-primary aidat_btn_loc" %>
             </p>
 
         <% end %>
-
-    </div>
-        </div>
+<% end %>
+      </div>
+   </div>

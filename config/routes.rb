@@ -1,19 +1,18 @@
 AmsProject::Application.routes.draw do
-  
+
   resources :sessions, only: [:new, :create, :destroy]
   match 'signin', to: 'sessions#new', via:'get'
   match 'signout', to: 'sessions#destroy', via:'delete'
-  
+
   resources :users
   match '/signup', to: 'users#new', via:'get'
   match 'users/:id/verify' => "users#verify", via:'get' ,:as => "verify_user"
   match 'users/:id/unverify' => "users#unverify", via:'get' ,:as => "unverify_user"
-  
+
   resources :renters
 
   resources :aidats
 
-  
   #get "static_pages/home"
   #match '/', to: 'static_pages#home', via: 'get'
   root  'static_pages#home'
@@ -25,8 +24,6 @@ AmsProject::Application.routes.draw do
   match '/contact', to: 'static_pages#contact', via: 'get'
 
 
-
-  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -67,7 +64,7 @@ AmsProject::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'

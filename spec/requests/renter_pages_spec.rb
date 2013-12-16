@@ -28,7 +28,7 @@ describe "Renter pages" do
 
     it { should have_title('Kiracı Takip') }
     it { should have_selector('h1', text: 'Tüm Apartman Sakinleri') }
-    it { should have_selector('th', text: 'D. No') }
+    it { should have_selector('th', text: 'Daire No') }
     it { should have_selector('th', text: 'İsim') }
     it { should have_selector('th', text: 'Telefon') }
     it { should have_selector('th', text: 'E-mail') }
@@ -53,7 +53,7 @@ describe "Renter pages" do
          before do
           select '8', :from => "Daire Numarası"
           fill_in "İsim", with: renter.name
-          fill_in "Telefon", with: renter.phone
+          fill_in "Telefon *", with: renter.phone
           fill_in "E-Mail", with: "deneme2@renter.com"
           click_button "Kiracıyı Ekle"
         end

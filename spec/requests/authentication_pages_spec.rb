@@ -18,7 +18,7 @@ describe "Authentication" do
       before { click_button "Giriş Yap" }
 
       it { should have_title('Giriş') }
-      it { should have_selector('div.alert.alert-error', text: 'Hatalı') }
+      it { should have_selector('div.alert.alert-error', text: 'hatalı') }
 
       describe "after visiting another page" do
         before { click_link "Anasayfa" }
@@ -57,7 +57,7 @@ describe "Authentication" do
 
       it { should have_title(full_title('Anasayfa')) }
 
-      it { should have_link('Aidat Takip', href: '#') } #dues_path olarak değişecek
+      it { should have_link('Aidat Takip', href: aidats_path) }
       it { should have_link('Kullanıcı Takip', href: users_path) }
       it { should have_link('Kiracı Takip', href: renters_path) }
       it { should have_link('Profil', href: user_path(user)) }
