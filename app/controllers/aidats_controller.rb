@@ -92,8 +92,9 @@ class AidatsController < ApplicationController
   # Helper method for giving error about no apartment match found
   def no_daire_error(daire_num)
      if current_user.admin?
-        flash.now[:error] = daire_num + " nolu Kiracıya ait ödenmiş aidat yok. Lütfen ekleyin."
-        render 'new'
+        flash[:error] = daire_num + " nolu Kiracıya ait ödenmiş aidat yok. Lütfen ekleyin."
+        #render 'new'
+        redirect_to new_aidat_path
      else
         flash[:error] = daire_num + " nolu Kiracıya ait ödenmiş aidat yok."
         redirect_to root_path

@@ -5,7 +5,7 @@ class CreateRenters < ActiveRecord::Migration
       t.string :name
       t.string :email
       t.string :phone
-      t.string :ap_num
+      t.integer :ap_num
       t.string :meslek
       t.string :medeni_durum
       t.integer :birey_sayisi

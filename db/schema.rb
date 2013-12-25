@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20131213112722) do
     t.string   "name"
     t.string   "email"
     t.string   "phone"
-    t.string   "ap_num"
+    t.integer  "ap_num"
     t.string   "meslek"
     t.string   "medeni_durum"
     t.integer  "birey_sayisi"
