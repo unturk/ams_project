@@ -1,5 +1,7 @@
 AmsProject::Application.routes.draw do
 
+  #match '/request', to: 'istek#index', via:'get', :as => "requests"
+  resources :requests, only: [:index, :create ]
   resources :sessions, only: [:new, :create, :destroy]
   match 'signin', to: 'sessions#new', via:'get'
   match 'signout', to: 'sessions#destroy', via:'delete'
