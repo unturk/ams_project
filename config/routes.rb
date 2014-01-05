@@ -12,6 +12,8 @@ AmsProject::Application.routes.draw do
   resources :renters
 
   resources :aidats
+  
+  resources :posts
 
   #get "static_pages/home"
   #match '/', to: 'static_pages#home', via: 'get'

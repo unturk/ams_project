@@ -1,0 +1,17 @@
+<div class="duyuru_show">
+	<p>
+  		<strong>Duyuru Başlığı:</strong>
+  		<%= @post.title %> 
+	</p>
+ 
+	<p>
+  		<strong>Duyuru İçeriği:</strong>
+  		<%= wrap(@post.text) %>
+	</p>
+
+	<%= link_to 'Duyuru Ana Sayfa', posts_path %>
+	<% if current_user.admin? %>
+		| <%= link_to 'Duyuru Düzenle', edit_post_path(@post) %>
+		| <%= link_to 'Duyuru Sil', post_path(@post), method: :delete, data: { confirm: 'Duyuru silinecek. Son kararınız mı?' } %>
+	<% end %>
+</div>

@@ -1,0 +1,24 @@
+<h1>Apartman Duyuruları</h1>
+<br>
+
+<div class="row">
+	<div class="span6">
+		<% @posts.each do |post| %>
+			<ol class="announcements">
+				<li>
+  					<span class="title"><%= link_to post.title, post_path(post)  %></span>
+  					<span class="timestamp"> <%= post.created_at %> tarihinde yayınlandı.</span>
+  					<% if current_user.admin? %>
+    					<%= link_to "Sil", post, method: :delete,
+    								 data: { confirm: "Silmek istediğinize eminmisiniz?" },
+                                     title: post.title %>
+  					<% end %>
+				</li>
+			</ol>
+		<% end %>
+		
+		<% if current_user.admin? %>
+			<%= link_to "Yeni Duyuru", new_post_path ,class:'btn btn-primary btn-sm active add_renter', role:'button'%>
+		<% end %>
+	</div>
+</div>

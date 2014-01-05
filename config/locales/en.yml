@@ -44,6 +44,9 @@ en:
           daire: "Daire"
           year: "Yıl"
           month: "Ay"
+        post:
+          title: "Başlık"
+          text: "İçerik"
 
       errors:
         models:

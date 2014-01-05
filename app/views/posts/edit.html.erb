@@ -1,0 +1,21 @@
+<h1>Duyuruyu Düzenle</h1>
+ 
+ <%= form_for(@post) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+
+  <p>
+    <%= f.label :başlık%>
+    <%= f.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= f.label :içerik %>
+    <%= f.text_area :text %>
+  </p>
+ 
+  <p>
+    <%= f.submit "Duyuruyu Güncelle", class: "btn btn-large btn-primary post_update_btn_loc" %>
+  </p>
+<% end %>
+
+<%= link_to 'Geri', posts_path %>

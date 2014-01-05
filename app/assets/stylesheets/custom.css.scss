@@ -232,3 +232,31 @@ input {
   margin-top:20px;
   margin-left:180px;
 }
+
+.post_update_btn_loc{
+  margin-top:10px;
+  margin-left:380px;
+}
+
+.title {
+  display: block;
+}
+.timestamp {
+  color: $grayLight;
+}
+
+  /* announcements */
+
+.announcements {
+  list-style: none;
+  margin: 10px 0 0 0;
+
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+}
+
+.duyuru_show{
+  margin-top: 50px;
+}
