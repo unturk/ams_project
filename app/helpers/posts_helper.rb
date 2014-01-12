@@ -1,7 +1,8 @@
+#Helper Module for Announcements
 module PostsHelper
 
   def wrap(content)
-    sanitize(raw(content.split.map{ |s| wrap_long_string(s) }.join(' ')))
+    sanitize(raw(content.split.map{ |string| wrap_long_string(string) }.join(' ')))
   end
 
   private
